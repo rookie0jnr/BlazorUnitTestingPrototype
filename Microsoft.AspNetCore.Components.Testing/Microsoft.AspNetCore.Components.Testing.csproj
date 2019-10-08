@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ContainerComponent.cs" />
+    <Compile Remove="EventDispatchExtensions.cs" />
+    <Compile Remove="Htmlizer.cs" />
+    <Compile Remove="RenderedComponent.cs" />
+    <Compile Remove="TestHost.cs" />
+    <Compile Remove="TestHtmlDocument.cs" />
+    <Compile Remove="TestRenderer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0-preview9.19424.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.0.0-preview9.19424.4" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview9.19423.4" />
