@@ -9,7 +9,6 @@
     <Compile Remove="EventDispatchExtensions.cs" />
     <Compile Remove="Htmlizer.cs" />
     <Compile Remove="RenderedComponent.cs" />
-    <Compile Remove="TestHost.cs" />
     <Compile Remove="TestHtmlDocument.cs" />
     <Compile Remove="TestRenderer.cs" />
   </ItemGroup>

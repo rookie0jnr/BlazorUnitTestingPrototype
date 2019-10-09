@@ -10,17 +10,17 @@ namespace Microsoft.AspNetCore.Components.Testing
 {
     public class TestHost
     {
-        private readonly ServiceCollection _serviceCollection = new ServiceCollection();
-        private readonly Lazy<TestRenderer> _renderer;
+        //private readonly ServiceCollection _serviceCollection = new ServiceCollection();
+        //private readonly Lazy<TestRenderer> _renderer;
 
         public TestHost()
         {
-            _renderer = new Lazy<TestRenderer>(() =>
-            {
-                var serviceProvider = _serviceCollection.BuildServiceProvider();
-                var loggerFactory = serviceProvider.GetService<ILoggerFactory>() ?? new NullLoggerFactory();
-                return new TestRenderer(serviceProvider, loggerFactory);
-            });
+            //_renderer = new Lazy<TestRenderer>(() =>
+            //{
+            //    var serviceProvider = _serviceCollection.BuildServiceProvider();
+            //    var loggerFactory = serviceProvider.GetService<ILoggerFactory>() ?? new NullLoggerFactory();
+            //    return new TestRenderer(serviceProvider, loggerFactory);
+            //});
         }
 
         //public void WaitForNextRender(Action trigger)
@@ -35,13 +35,13 @@ namespace Microsoft.AspNetCore.Components.Testing
         //    }
         //}
 
-        public RenderedComponent<TComponent> AddComponent<TComponent>() where TComponent: IComponent
-        {
-            var result = new RenderedComponent<TComponent>(Renderer);
-            result.SetParametersAndRender(ParameterView.Empty);
-            return result;
-        }
+        //public RenderedComponent<TComponent> AddComponent<TComponent>() where TComponent: IComponent
+        //{
+        //    var result = new RenderedComponent<TComponent>(Renderer);
+        //    result.SetParametersAndRender(ParameterView.Empty);
+        //    return result;
+        //}
 
-        private TestRenderer Renderer => _renderer.Value;
+        //private TestRenderer Renderer => _renderer.Value;
     }
 }
