@@ -30,7 +30,7 @@ namespace Microsoft.AspNetCore.Components.Testing
 
         public void Attach(RenderHandle renderHandle)
         {
-            _renderHandle = renderHandle;
+            //_renderHandle = renderHandle;
         }
 
         public Task SetParametersAsync(ParameterView parameters)
@@ -38,36 +38,36 @@ namespace Microsoft.AspNetCore.Components.Testing
             throw new NotImplementedException($"{nameof(ContainerComponent)} shouldn't receive any parameters");
         }
 
-        public (int, object) FindComponentUnderTest()
-        {
-            var ownFrames = _renderer.GetCurrentRenderTreeFrames(_componentId);
-            if (ownFrames.Count == 0)
-            {
-                throw new InvalidOperationException($"{nameof(ContainerComponent)} hasn't yet rendered");
-            }
+        //public (int, object) FindComponentUnderTest()
+        //{
+        //    var ownFrames = _renderer.GetCurrentRenderTreeFrames(_componentId);
+        //    if (ownFrames.Count == 0)
+        //    {
+        //        throw new InvalidOperationException($"{nameof(ContainerComponent)} hasn't yet rendered");
+        //    }
 
-            ref var childComponentFrame = ref ownFrames.Array[0];
-            Debug.Assert(childComponentFrame.FrameType == RenderTreeFrameType.Component);
-            Debug.Assert(childComponentFrame.Component != null);
-            return (childComponentFrame.ComponentId, childComponentFrame.Component);
-        }
+        //    ref var childComponentFrame = ref ownFrames.Array[0];
+        //    Debug.Assert(childComponentFrame.FrameType == RenderTreeFrameType.Component);
+        //    Debug.Assert(childComponentFrame.Component != null);
+        //    return (childComponentFrame.ComponentId, childComponentFrame.Component);
+        //}
 
-        public void RenderComponentUnderTest(Type componentType, ParameterView parameters)
-        {
-            _renderer.DispatchAndAssertNoSynchronousErrors(() =>
-            {
-                _renderHandle.Render(builder =>
-                {
-                    builder.OpenComponent(0, componentType);
+        //public void RenderComponentUnderTest(Type componentType, ParameterView parameters)
+        //{
+        //    _renderer.DispatchAndAssertNoSynchronousErrors(() =>
+        //    {
+        //        _renderHandle.Render(builder =>
+        //        {
+        //            builder.OpenComponent(0, componentType);
 
-                    foreach (var parameterValue in parameters)
-                    {
-                        builder.AddAttribute(1, parameterValue.Name, parameterValue.Value);
-                    }
+        //            foreach (var parameterValue in parameters)
+        //            {
+        //                builder.AddAttribute(1, parameterValue.Name, parameterValue.Value);
+        //            }
 
-                    builder.CloseComponent();
-                });
-            });
-        }
+        //            builder.CloseComponent();
+        //        });
+        //    });
+        //}
     }
 }

@@ -12,7 +12,7 @@ namespace SampleApp.Tests
         [Fact]
         public void CounterWorks()
         {
-            //var component = host.AddComponent<Counter>();
+            var component = host.AddComponent<Counter>();
             //Func<string> countValue = () => component.Find("#count").InnerText;
 
             //Assert.Equal("Counter", component.Find("h1").InnerText);

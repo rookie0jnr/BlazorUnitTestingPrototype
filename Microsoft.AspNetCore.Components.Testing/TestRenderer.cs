@@ -19,23 +19,23 @@ namespace Microsoft.AspNetCore.Components.Testing
         {
         }
 
-        public new ArrayRange<RenderTreeFrame> GetCurrentRenderTreeFrames(int componentId)
-            => base.GetCurrentRenderTreeFrames(componentId);
+        //public new ArrayRange<RenderTreeFrame> GetCurrentRenderTreeFrames(int componentId)
+        //    => base.GetCurrentRenderTreeFrames(componentId);
 
         public int AttachTestRootComponent(ContainerComponent testRootComponent)
             => AssignRootComponentId(testRootComponent);
 
-        public new Task DispatchEventAsync(ulong eventHandlerId, EventFieldInfo fieldInfo, EventArgs eventArgs)
-        {
-            var task = Dispatcher.InvokeAsync(
-                () => base.DispatchEventAsync(eventHandlerId, fieldInfo, eventArgs));
-            AssertNoSynchronousErrors();
-            return task;
-        }
+        //public new Task DispatchEventAsync(ulong eventHandlerId, EventFieldInfo fieldInfo, EventArgs eventArgs)
+        //{
+        //    var task = Dispatcher.InvokeAsync(
+        //        () => base.DispatchEventAsync(eventHandlerId, fieldInfo, eventArgs));
+        //    AssertNoSynchronousErrors();
+        //    return task;
+        //}
 
         public override Dispatcher Dispatcher { get; } = Dispatcher.CreateDefault();
 
-        public Task NextRender => _nextRenderTcs.Task;
+        //public Task NextRender => _nextRenderTcs.Task;
 
         protected override void HandleException(Exception exception)
         {
@@ -51,18 +51,18 @@ namespace Microsoft.AspNetCore.Components.Testing
             return Task.CompletedTask;
         }
 
-        public void DispatchAndAssertNoSynchronousErrors(Action callback)
-        {
-            Dispatcher.InvokeAsync(callback).Wait();
-            AssertNoSynchronousErrors();
-        }
+        //public void DispatchAndAssertNoSynchronousErrors(Action callback)
+        //{
+        //    Dispatcher.InvokeAsync(callback).Wait();
+        //    AssertNoSynchronousErrors();
+        //}
 
-        private void AssertNoSynchronousErrors()
-        {
-            if (_unhandledException != null)
-            {
-                ExceptionDispatchInfo.Capture(_unhandledException).Throw();
-            }
-        }
+        //private void AssertNoSynchronousErrors()
+        //{
+        //    if (_unhandledException != null)
+        //    {
+        //        ExceptionDispatchInfo.Capture(_unhandledException).Throw();
+        //    }
+        //}
     }
 }
