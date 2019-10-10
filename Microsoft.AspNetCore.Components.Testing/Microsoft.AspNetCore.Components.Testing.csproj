@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <Compile Remove="EventDispatchExtensions.cs" />
-    <Compile Remove="Htmlizer.cs" />
-    <Compile Remove="TestHtmlDocument.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -25,22 +25,10 @@ namespace Microsoft.AspNetCore.Components.Testing
             });
         }
 
-        //public void WaitForNextRender(Action trigger)
-        //{
-        //    var task = Renderer.NextRender;
-        //    trigger();
-        //    task.Wait(millisecondsTimeout: 1000);
-
-        //    if (!task.IsCompleted)
-        //    {
-        //        throw new TimeoutException("No render occurred within the timeout period.");
-        //    }
-        //}
-
         public RenderedComponent<TComponent> AddComponent<TComponent>() where TComponent : IComponent
         {
             var result = new RenderedComponent<TComponent>(Renderer);
-            //result.SetParametersAndRender(ParameterView.Empty);
+            result.SetParametersAndRender(ParameterView.Empty);
             return result;
         }
 

@@ -13,6 +13,9 @@ namespace SampleApp.Tests
         public void CounterWorks()
         {
             var component = host.AddComponent<Counter>();
+            var buttonIncrement = component.Find("button.inc");
+
+            int i = 5;
             //Func<string> countValue = () => component.Find("#count").InnerText;
 
             //Assert.Equal("Counter", component.Find("h1").InnerText);
