@@ -13,19 +13,19 @@ namespace SampleApp.Tests
         public void CounterWorks()
         {
             var component = host.AddComponent<Counter>();
-            var buttonIncrement = component.Find("button.inc");
+            //var buttonIncrement = component.Find("button.inc");
 
-            int i = 5;
-            //Func<string> countValue = () => component.Find("#count").InnerText;
+            //int i = 5;
+            Func<string> countValue = () => component.Find("#count").InnerText;
 
-            //Assert.Equal("Counter", component.Find("h1").InnerText);
-            //Assert.Equal("Current count: 0", countValue());
+            Assert.Equal("Counter", component.Find("h1").InnerText);
+            Assert.Equal("Current count: 0", countValue());
 
-            //component.Find("button.inc").Click();
-            //Assert.Contains("Current count: 1", countValue());
+            component.Find("button.inc").Click();
+            Assert.Contains("Current count: 1", countValue());
 
-            //component.Find("button.dec").Click();
-            //Assert.Contains("Current count: 0", countValue());
+            component.Find("button.dec").Click();
+            Assert.Contains("Current count: 0", countValue());
         }
     }
 }

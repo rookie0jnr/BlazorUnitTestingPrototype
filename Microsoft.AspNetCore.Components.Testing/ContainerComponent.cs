@@ -60,10 +60,10 @@ namespace Microsoft.AspNetCore.Components.Testing
                 {
                     builder.OpenComponent(0, componentType);
 
-                    foreach (var parameterValue in parameters)
-                    {
-                        builder.AddAttribute(1, parameterValue.Name, parameterValue.Value);
-                    }
+                    //foreach (var parameterValue in parameters)
+                    //{
+                    //    builder.AddAttribute(1, parameterValue.Name, parameterValue.Value);
+                    //}
 
                     builder.CloseComponent();
                 });

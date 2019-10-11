@@ -51,8 +51,8 @@ namespace Microsoft.AspNetCore.Components.Testing
             var markup = GetMarkup();
             // Do we really need a wrapper over the HtmlAgilityPack.HtmlDocument?
             // And why it needs to have the TestRenderer?
-            //var html = new TestHtmlDocument(_renderer);
-            var html = new HtmlDocument();
+            var html = new TestHtmlDocument(_renderer);
+            //var html = new HtmlDocument();
 
             html.LoadHtml(markup);
             return html.DocumentNode.QuerySelectorAll(selector).ToList();
